@@ -28,11 +28,22 @@ class FactorialsTest {
   void computeRecursive() {
     for (long[] testCase : testCases) {
       int n = (int) testCase[0];
-     BigInteger expected = BigInteger.valueOf(testCase[1]);
+      BigInteger expected = BigInteger.valueOf(testCase[1]);
       BigInteger actual = Factorials.computeRecursive(n);
       assertEquals(expected, actual);
     }
     assertThrows(IllegalArgumentException.class, () -> Factorials.computeRecursive(-1));
+  }
+
+  @Test
+  void computeInt() {
+    for (long[] testCase : testCases) {
+      int n = (int) testCase[0];
+      BigInteger expected = BigInteger.valueOf(testCase[1]);
+      BigInteger actual = Factorials.computeInt(n);
+      assertEquals(expected, actual);
+    }
+    assertThrows(IllegalArgumentException.class, () -> Factorials.computeInt(-1));
   }
 
 }
